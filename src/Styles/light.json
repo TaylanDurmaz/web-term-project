@@ -1,0 +1,17 @@
+{
+  "colors": {
+    "main": {
+      "gray": "#dddddd"
+    },
+    "sider": {
+      "background": "#1fa6fa",
+      "linear1": "#1fa6fa",
+      "linear2": "#0072e0"
+    }
+  },
+  "spaces": {
+    "normal": "10px",
+    "big": "20px",
+    "veryBig": "30px"
+  }
+}
