@@ -1,16 +1,21 @@
 import styled from "styled-components";
 import { Layout } from "antd";
 
-const { Sider } = Layout;
+const { Sider, Content } = Layout;
 
 export const StyledLayout = styled(Layout)`
-  background: #fff;
+  background: #f2f2f2;
   heigth: 100vh;
+`;
+
+export const StyledContent = styled(Content)`
+  padding: ${props => props.theme.spaces.big};
+  overflow: auto;
 `;
 
 export const StyledSider = styled(Sider)`
   user-select: none;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 10px 10px 0px;
   background-image: linear-gradient(
     to bottom,
     ${props => props.theme.colors.sider.linear1},

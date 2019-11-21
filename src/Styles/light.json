@@ -9,6 +9,12 @@
       "linear2": "#0072e0"
     }
   },
+  "fonts": {
+    "small": "5px",
+    "normal": "10px",
+    "big": "20px",
+    "title": "30px"
+  },
   "spaces": {
     "normal": "10px",
     "big": "20px",

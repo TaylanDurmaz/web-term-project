@@ -1,11 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Menu, Icon } from "antd";
-import { StyledLayout, StyledSider, Logo } from "./styles";
+import { StyledLayout, StyledSider, StyledContent, Logo } from "./styles";
 
 const { SubMenu } = Menu;
 
 export const Layout = StyledLayout;
+export const Content = StyledContent;
 
 export const Sider = () => {
   const history = useHistory();

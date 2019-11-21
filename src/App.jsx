@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Sider, Layout } from "./Components/Layout";
+import { Sider, Layout, Content } from "./Components/Layout";
 import ligthTheme from "./Styles/light.json";
 
 import Homepage from "./Pages/Homepage";
-
-const { Content } = Layout;
 
 const App = () => {
   const [theme, setTheme] = useState(ligthTheme);
