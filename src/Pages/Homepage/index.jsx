@@ -12,27 +12,6 @@ const Homepage = () => {
     <HomepageStyles>
       <Card className="summary-container">
         <div className="summary-container-top">
-          <Title nomargin>Upcoming Events</Title>
-          <Button type="primary"> See All</Button>
-        </div>
-
-        <Row gutter={20} type="flex">
-          {DUMMY_EVENTS.map(event => (
-            <Col span={6}>
-              <Card
-                hoverable
-                cover={<img alt="example" src={event.image} />}
-                fullwidth
-              >
-                <Meta title={event.title} description={event.desc} />
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Card>
-
-      <Card className="summary-container">
-        <div className="summary-container-top">
           <Title nomargin>Hot Topics</Title>
           <Button type="primary"> See All</Button>
         </div>
@@ -53,6 +32,27 @@ const Homepage = () => {
               </List.Item>
             )}
           />
+        </Row>
+      </Card>
+
+      <Card className="summary-container">
+        <div className="summary-container-top">
+          <Title nomargin>Upcoming Events</Title>
+          <Button type="primary"> See All</Button>
+        </div>
+
+        <Row gutter={20} type="flex">
+          {DUMMY_EVENTS.map(event => (
+            <Col span={6}>
+              <Card
+                hoverable
+                cover={<img alt="example" src={event.image} />}
+                fullwidth
+              >
+                <Meta title={event.title} description={event.desc} />
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Card>
     </HomepageStyles>
