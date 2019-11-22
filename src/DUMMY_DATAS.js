@@ -71,5 +71,11 @@ export const DUMMY_CLUB = {
   name: "Blockchain Technologies Club",
   desc:
     "The aim of the Blockchain Technologies Club is to raise awareness on the blockchain technology within the university, informing students about blockchain technology and cryptocurrencies.  The club also aims for the students to make the most of the Blockchain Center located within the university.",
-  logo: CLUP_LOGO
+  logo: CLUP_LOGO,
+  contactPerson: {
+    name: "Mert Taylan",
+    surname: "Durmaz",
+    email: "merttaylandurmaz@gmail.com",
+    phone: "05555555555"
+  }
 };

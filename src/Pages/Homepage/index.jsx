@@ -1,11 +1,10 @@
 import React from "react";
 import { Row, Col, Button, List, Badge } from "antd";
 import { Card, Title } from "../../Components/Common";
-import HomepageStyles from "./styles";
+import SummaryCard from "../../Components/SummaryCard";
 import { DUMMY_EVENTS, DUMMY_TOPICS } from "../../DUMMY_DATAS";
+import HomepageStyles from "./styles";
 import USER_PHOTO from "../../static/user-photo.jpg";
-
-const { Meta } = Card;
 
 const Homepage = () => {
   return (
@@ -44,13 +43,11 @@ const Homepage = () => {
         <Row gutter={20} type="flex">
           {DUMMY_EVENTS.map(event => (
             <Col span={6}>
-              <Card
-                hoverable
-                cover={<img alt="example" src={event.image} />}
-                fullwidth
-              >
-                <Meta title={event.title} description={event.desc} />
-              </Card>
+              <SummaryCard
+                image={event.image}
+                title={event.title}
+                desc={event.desc}
+              />
             </Col>
           ))}
         </Row>

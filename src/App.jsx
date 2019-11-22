@@ -6,9 +6,10 @@ import ligthTheme from "./Styles/light.json";
 
 import Homepage from "./Pages/Homepage";
 import StudentClups from "./Pages/StudentClups";
+import Club from "./Pages/Club";
 
 const App = () => {
-  const [theme, setTheme] = useState(ligthTheme);
+  const [theme] = useState(ligthTheme);
 
   return (
     <ThemeProvider theme={theme}>
@@ -19,6 +20,7 @@ const App = () => {
             <Switch>
               <Route exact path="/home" component={Homepage} />
               <Route exact path="/clubs" component={StudentClups} />
+              <Route exact path="/clubs/detail" component={Club} />
               <Redirect to="/home" />
             </Switch>
           </Content>
