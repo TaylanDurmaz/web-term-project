@@ -5,6 +5,7 @@ import { Sider, Layout, Content } from "./Components/Layout";
 import ligthTheme from "./Styles/light.json";
 
 import Homepage from "./Pages/Homepage";
+import StudentClups from "./Pages/StudentClups";
 
 const App = () => {
   const [theme, setTheme] = useState(ligthTheme);
@@ -17,6 +18,7 @@ const App = () => {
           <Content>
             <Switch>
               <Route exact path="/home" component={Homepage} />
+              <Route exact path="/clubs" component={StudentClups} />
               <Redirect to="/home" />
             </Switch>
           </Content>
