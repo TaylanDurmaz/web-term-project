@@ -1,0 +1,21 @@
+import { loginActionCreator, logoutActionCreator } from "./actions";
+
+export const tryLogin = ({ email, password }) => async (
+  dispatch,
+  getState,
+  service
+) => {
+  const response = await service.xmlFetch({
+    path: "login",
+    method: "POST",
+    body: { email, password }
+  });
+  await window.localStorage.setItem("jwt", response.token);
+  await dispatch(loginActionCreator(response));
+  return response;
+};
+
+export const logout = () => async (dispatch, getState, service) => {
+  await window.localStorage.setItem("jwt", null);
+  await dispatch(logoutActionCreator());
+};
