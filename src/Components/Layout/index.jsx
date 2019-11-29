@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import { Menu, Icon } from "antd";
 import { StyledLayout, StyledSider, StyledContent, Logo } from "./styles";
 
-const { SubMenu } = Menu;
-
 export const Layout = StyledLayout;
 export const Content = StyledContent;
 
@@ -29,18 +27,10 @@ export const Sider = () => {
           <span>Events</span>
         </Menu.Item>
 
-        <SubMenu
-          key="sub2"
-          title={
-            <span>
-              <Icon type="snippets" />
-              <span>Forums</span>
-            </span>
-          }
-        >
-          <Menu.Item key="topics">Lectures</Menu.Item>
-          <Menu.Item key="createTopic">Lost Items</Menu.Item>
-        </SubMenu>
+        <Menu.Item key="forum" onClick={() => history.push("/forum")}>
+          <Icon type="snippets" />
+          <span>Forum</span>
+        </Menu.Item>
       </Menu>
     </StyledSider>
   );
