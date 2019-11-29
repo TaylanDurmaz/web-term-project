@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Row, Col, Spin } from "antd";
-import { Card } from "../../Components/Common";
+import { useHistory } from "react-router-dom";
+import { Row, Spin, Button } from "antd";
+import { Title } from "../../Components/Common";
+import ClubCard from "../../Components/ClubCard";
+import CreateClubModal from "./CreateClubModal";
 import { fetchClubList } from "../../redux/clubs/api";
-import { DUMMY_CLUB } from "../../DUMMY_DATAS";
 
 const StudentClubs = () => {
-  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+  const [createClubVisible, setCreateClubVisible] = useState(false);
   const clubList = useSelector(state => state.clubs.clubList);
+  const user = useSelector(state => state.auth.user);
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function cdm() {
@@ -19,19 +24,47 @@ const StudentClubs = () => {
   }, []);
 
   return (
-    <Card className="summary-container">
+    <>
       {loading ? (
-        <Spin />
+        <Spin size="large" />
       ) : (
-        <Row type="flex">
-          {clubList.map(club => (
-            <Col span={8}>
-              <Card title={club.name} desc={club.desc} />
-            </Col>
+        <>
+          <Row type="flex" justify="space-between">
+            <Title>Student Clubs</Title>
+            {user && user.role === 2 && (
+              <>
+                <Button
+                  type="primary"
+                  onClick={() => setCreateClubVisible(true)}
+                >
+                  Add Club
+                </Button>
+                <CreateClubModal
+                  visible={createClubVisible}
+                  onClose={() => setCreateClubVisible(false)}
+                />
+              </>
+            )}
+          </Row>
+          {clubList.map((club, idx) => (
+            <ClubCard
+              key={`club-card-${idx}`}
+              className="club-card"
+              title={club.name}
+              desc={club.desc}
+              image={club.logoUrl}
+              owner={club.owner}
+              onClick={() =>
+                history.push({
+                  pathname: "/clubs/detail",
+                  state: { clubId: club.id }
+                })
+              }
+            />
           ))}
-        </Row>
+        </>
       )}
-    </Card>
+    </>
   );
 };
 

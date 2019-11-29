@@ -46,7 +46,7 @@ class RequestService {
       if (config.sendToken)
         xmlHttpRequest.setRequestHeader(
           "Authorization",
-          `${CONFIGURATION.TOKEN_TYPE} ${window.localStorage.getItem("jwt")}`
+          `${window.localStorage.getItem("jwt")}`
         );
 
       if (config.body) {

@@ -8,9 +8,12 @@ import ligthTheme from "./Styles/light.json";
 import Login from "./Pages/Login";
 import Homepage from "./Pages/Homepage";
 import StudentClubs from "./Pages/StudentClubs";
+import ClubDetail from "./Pages/ClubDetail";
+import Forum from "./Pages/Forum";
+import TopicDetail from "./Pages/TopicDetail";
 
 const App = () => {
-  const [theme, setTheme] = useState(ligthTheme);
+  const [theme] = useState(ligthTheme);
   const loggedIn = useSelector(state => state.auth.loggedIn);
 
   return (
@@ -23,17 +26,20 @@ const App = () => {
               <Switch>
                 <Route exact path="/home" component={Homepage} />
                 <Route exact path="/clubs" component={StudentClubs} />
+                <Route exact path="/clubs/detail" component={ClubDetail} />
+                <Route exact path="/forum/topic" component={TopicDetail} />
+                <Route exact path="/forum" component={Forum} />
                 <Redirect to="/home" />
               </Switch>
             </Content>
           </Layout>
         </Layout>
       ) : (
-          <Switch>
-            <Route exact path="/login" component={Login} />
-            <Redirect to="/login" />
-          </Switch>
-        )}
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Redirect to="/login" />
+        </Switch>
+      )}
     </ThemeProvider>
   );
 };

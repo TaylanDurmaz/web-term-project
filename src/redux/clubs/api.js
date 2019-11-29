@@ -13,7 +13,7 @@ export const fetchClubList = () => async (dispatch, getState, service) => {
 export const createClub = clubConfig => async (dispatch, getState, service) => {
   const response = await service.xmlFetch({
     path: "clubs",
-    method: "GET",
+    method: "POST",
     sendToken: true,
     body: clubConfig
   });

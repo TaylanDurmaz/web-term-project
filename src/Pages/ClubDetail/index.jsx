@@ -4,8 +4,6 @@ import { Card, Title } from "../../Components/Common";
 import Styles from "./styles";
 import { DUMMY_CLUB as CLUB } from "../../DUMMY_DATAS";
 
-const arr = Array.apply(null, Array(20));
-
 const StudentClubs = () => {
   const contactPersonContent = (
     <div className="contact-person">
@@ -25,7 +23,7 @@ const StudentClubs = () => {
       <Card>
         <Row type="flex">
           <Col span={6}>
-            <img className="club-logo" src={CLUB.logo} />
+            <img className="club-logo" src={CLUB.logo} alt="ClubLogo" />
 
             <Popover content={contactPersonContent}>
               <Tag color="blue" className="contact-person-tag">

@@ -5,9 +5,9 @@ import SummaryCardStyles from "./styles";
 
 const { Meta } = Card;
 
-const SummaryCard = ({ image, title, desc, onClick }) => {
+const SummaryCard = ({ image, title, desc, onClick, className }) => {
   return (
-    <SummaryCardStyles>
+    <SummaryCardStyles className={className}>
       <Card
         hoverable
         cover={<img className="card-image" alt="car-img" src={image} />}
@@ -21,6 +21,7 @@ const SummaryCard = ({ image, title, desc, onClick }) => {
 };
 
 SummaryCard.propTypes = {
+  className: PropTypes.string,
   image: PropTypes.string,
   title: PropTypes.string,
   desc: PropTypes.string,
@@ -30,6 +31,7 @@ SummaryCard.defaultProps = {
   image: "",
   title: "",
   desc: "",
+  className: "",
   onClick: () => {}
 };
 

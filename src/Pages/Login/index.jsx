@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Row, Col, Input, Icon, Button, message } from "antd";
-import { Card, Title } from "../../Components/Common";
+import { Card } from "../../Components/Common";
 import LoginStyles from "./styles";
 import BAU_PNG from "../../static/bau.png";
 import { tryLogin } from "../../redux/auth/api";
-
-const { Meta } = Card;
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +13,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const onSubmit = async () => {
-    await setLoading(true);
+    setLoading(true);
     try {
       await dispatch(tryLogin({ email, password }));
     } catch (error) {

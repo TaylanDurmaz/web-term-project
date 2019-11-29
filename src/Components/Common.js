@@ -8,13 +8,14 @@ export const Title = styled.p`
 
 export const Card = styled(CardAntd)`
   width: ${props => props.fullwidth && "100%"};
-  margin: 10px !important;
+  margin: 10px 0px !important;
   border-radius: 10px !important;
   overflow: ${props => props.overflow};
 
-  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  // &:hover {
-  //   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
-  // }
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  ${props =>
+    props.hoverable &&
+    `&:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  }`}
 `;
