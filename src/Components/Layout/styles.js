@@ -23,6 +23,19 @@ export const StyledSider = styled(Sider)`
   );
   background-color: ${props => props.theme.colors.sider.background};
 
+  .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .account-menu {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px 4px 10px 4px;
+    background: rgb(255, 255, 255, 0.2);
+  }
+
   & .ant-layout-sider-children {
     display: flex !important;
     flex-direction: column !important;
@@ -34,6 +47,7 @@ export const StyledSider = styled(Sider)`
   }
   & .ant-menu {
     background-color: transparent !important;
+    box-shadow: none !important;
 
     & .ant-menu-item {
       transform: all 1s;

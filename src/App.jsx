@@ -8,7 +8,7 @@ import ligthTheme from "./Styles/light.json";
 import Login from "./Pages/Login";
 import Homepage from "./Pages/Homepage";
 import StudentClubs from "./Pages/StudentClubs";
-import ClubDetail from "./Pages/ClubDetail";
+import Events from "./Pages/Events";
 import Forum from "./Pages/Forum";
 import TopicDetail from "./Pages/TopicDetail";
 
@@ -26,7 +26,7 @@ const App = () => {
               <Switch>
                 <Route exact path="/home" component={Homepage} />
                 <Route exact path="/clubs" component={StudentClubs} />
-                <Route exact path="/clubs/detail" component={ClubDetail} />
+                <Route exact path="/events" component={Events} />
                 <Route exact path="/forum/topic" component={TopicDetail} />
                 <Route exact path="/forum" component={Forum} />
                 <Redirect to="/home" />
