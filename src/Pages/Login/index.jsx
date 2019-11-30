@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Row, Col, Input, Icon, Button, message } from "antd";
 import { Card } from "../../Components/Common";
+import SignUpModal from "./SignUpModal";
 import LoginStyles from "./styles";
 import BAU_PNG from "../../static/bau.png";
 import { tryLogin } from "../../redux/auth/api";
@@ -10,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [signUpVisible, setSignUpVisible] = useState(false);
   const dispatch = useDispatch();
 
   const onSubmit = async () => {
@@ -64,12 +66,21 @@ const Login = () => {
                 </Button>
               </Col>
               <Col xs={24} md={18} lg={14}>
-                <Button className="sign-up-button">Sign Up</Button>
+                <Button
+                  className="sign-up-button"
+                  onClick={() => setSignUpVisible(true)}
+                >
+                  Sign Up
+                </Button>
               </Col>
             </Row>
           </Card>
         </Col>
       </Row>
+      <SignUpModal
+        visible={signUpVisible}
+        onClose={() => setSignUpVisible(false)}
+      />
     </LoginStyles>
   );
 };

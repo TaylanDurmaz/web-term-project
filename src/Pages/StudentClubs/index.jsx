@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Row, Spin, Button } from "antd";
 import { Title } from "../../Components/Common";
-import ClubCard from "../../Components/ClubCard";
+import SummaryCard from "../../Components/SummaryCard";
 import CreateClubModal from "./CreateClubModal";
 import { fetchClubList } from "../../redux/clubs/api";
 
@@ -47,19 +47,12 @@ const StudentClubs = () => {
             )}
           </Row>
           {clubList.map((club, idx) => (
-            <ClubCard
+            <SummaryCard
               key={`club-card-${idx}`}
               className="club-card"
               title={club.name}
               desc={club.desc}
               image={club.logoUrl}
-              owner={club.owner}
-              onClick={() =>
-                history.push({
-                  pathname: "/clubs/detail",
-                  state: { clubId: club.id }
-                })
-              }
             />
           ))}
         </>

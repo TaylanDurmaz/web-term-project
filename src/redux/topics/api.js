@@ -10,6 +10,15 @@ export const fetchTopicList = () => async (dispatch, getState, service) => {
   return response;
 };
 
+export const fetchHotTopicList = () => async (dispatch, getState, service) => {
+  const response = await service.xmlFetch({
+    path: "topics/hot",
+    method: "GET",
+    sendToken: true
+  });
+  return response;
+};
+
 export const createTopic = topicConfig => async (
   dispatch,
   getState,
@@ -20,6 +29,15 @@ export const createTopic = topicConfig => async (
     method: "POST",
     sendToken: true,
     body: topicConfig
+  });
+  return response;
+};
+
+export const deleteTopic = topicId => async (dispatch, getState, service) => {
+  const response = await service.xmlFetch({
+    path: `topics/${topicId}`,
+    method: "DELETE",
+    sendToken: true
   });
   return response;
 };

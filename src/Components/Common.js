@@ -7,7 +7,7 @@ export const Title = styled.p`
 `;
 
 export const Card = styled(CardAntd)`
-  width: ${props => props.fullwidth && "100%"};
+  width: ${props => props.grow && "100%"};
   margin: 10px 0px !important;
   border-radius: 10px !important;
   overflow: ${props => props.overflow};
@@ -15,7 +15,13 @@ export const Card = styled(CardAntd)`
   ${props =>
     props.hoverable &&
     `&:hover {
-    transform: scale(1.01);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+      cursor:initial;
+      transform: scale(1.01);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  }`}
+  ${props =>
+    props.onClick &&
+    `&:hover {
+      cursor:pointer;
   }`}
 `;
