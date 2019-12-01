@@ -58,13 +58,15 @@ const CreateEventModal = ({ visible, onClose }) => {
       if (imageList.length > 0) {
         const image = imageList[0];
         formData.append("image", image);
+      } else {
+        throw new Error("Please upload a image");
       }
 
       await dispatch(createEvent(formData));
       dispatch(fetchEventList());
       message.success("Created successfully");
     } catch (err) {
-      message.error(err.error);
+      message.error(err.message);
     }
     setLoading(false);
   };

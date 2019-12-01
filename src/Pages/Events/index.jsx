@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Button, message } from "antd";
-import { Title } from "../../Components/Common";
+import { Title, Card } from "../../Components/Common";
 import SummaryCard from "../../Components/SummaryCard";
 import CreateEventModal from "./CreateEventModal";
 import { fetchEventList } from "../../redux/events/api";
@@ -39,17 +39,21 @@ const Forum = () => {
         )}
       </Row>
 
-      {eventList.map((event, idx) => (
-        <SummaryCard
-          key={`event-card-${idx}`}
-          title={event.name}
-          desc={event.desc}
-          time={event.time}
-          place={event.place}
-          image={event.imageUrl}
-          owner={event.owner.name}
-        />
-      ))}
+      {loading ? (
+        <Card loading={loading} />
+      ) : (
+        eventList.map((event, idx) => (
+          <SummaryCard
+            key={`event-card-${idx}`}
+            title={event.name}
+            desc={event.desc}
+            time={event.time}
+            place={event.place}
+            image={event.imageUrl}
+            owner={event.owner.name}
+          />
+        ))
+      )}
 
       {user.role === 1 && (
         <CreateEventModal
