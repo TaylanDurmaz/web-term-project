@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Button, Spin } from "antd";
+import { Button } from "antd";
 import { Card, Title } from "../../Components/Common";
 import SummaryCard from "../../Components/SummaryCard";
 import HomepageStyles from "./styles";

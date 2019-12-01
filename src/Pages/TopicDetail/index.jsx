@@ -45,7 +45,7 @@ const TopicDetail = props => {
       message.error("There is nothing to post!");
     }
     const body = { message: input, topicId: topicInfo._id, owner: user._id };
-    const response = await xmlService.xmlFetch({
+    await xmlService.xmlFetch({
       path: "comments",
       method: "POST",
       body,

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { Row, Spin, Button, Card } from "antd";
+import { Row, Button, Card } from "antd";
 import { Title } from "../../Components/Common";
 import SummaryCard from "../../Components/SummaryCard";
 import CreateClubModal from "./CreateClubModal";
@@ -12,7 +11,6 @@ const StudentClubs = () => {
   const [createClubVisible, setCreateClubVisible] = useState(false);
   const clubList = useSelector(state => state.clubs.clubList);
   const user = useSelector(state => state.auth.user);
-  const history = useHistory();
   const dispatch = useDispatch();
 
   useEffect(() => {

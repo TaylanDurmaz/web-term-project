@@ -1,8 +1,4 @@
-import {
-  loginActionCreator,
-  logoutActionCreator,
-  signUpActionCreater
-} from "./actions";
+import { loginActionCreator, logoutActionCreator } from "./actions";
 
 export const tryLogin = ({ email, password }) => async (
   dispatch,

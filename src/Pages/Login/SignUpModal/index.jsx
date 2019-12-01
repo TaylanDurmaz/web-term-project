@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Button, Modal, Row, Input, Col, message } from "antd";
-import Styles from "./styles"
+import Styles from "./styles";
 import { signUp } from "../../../redux/auth/api";
-
-
-const { TextArea } = Input;
 
 const SignUpModal = ({ visible, onClose }) => {
   const dispatch = useDispatch();
@@ -66,7 +63,10 @@ const SignUpModal = ({ visible, onClose }) => {
             <p>Password:</p>
           </Col>
           <Col span={16}>
-            <Input type="password" onChange={e => setFormState("password", e)} />
+            <Input
+              type="password"
+              onChange={e => setFormState("password", e)}
+            />
           </Col>
           <Col span={8}>
             <p>Name:</p>
