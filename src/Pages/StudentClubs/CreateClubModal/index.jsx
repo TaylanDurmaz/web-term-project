@@ -65,6 +65,8 @@ const CreateClubModal = ({ visible, onClose }) => {
       if (logoList.length > 0) {
         const logo = logoList[0];
         formData.append("logo", logo);
+      } else {
+        throw new Error("Please upload a logo");
       }
 
       await dispatch(createClub(formData));

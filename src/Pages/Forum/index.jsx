@@ -38,8 +38,8 @@ const Forum = () => {
         </Button>
       </Row>
 
-      {topicList.map(topic => (
-        <TopicCard topic={topic} />
+      {topicList.map((topic, idx) => (
+        <TopicCard topic={topic} key={`topic-card${idx}`} />
       ))}
 
       <CreateTopicModal visible={createTopicVisible} onClose={closeModal} />

@@ -43,8 +43,8 @@ const Homepage = () => {
             See All
           </Button>
         </div>
-        {hotTopics.map(topic => (
-          <TopicCard topic={topic} />
+        {hotTopics.map((topic, idx) => (
+          <TopicCard topic={topic} key={`topic-card${idx}`} />
         ))}
       </Card>
 
