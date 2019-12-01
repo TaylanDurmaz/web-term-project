@@ -30,7 +30,7 @@ export const Sider = () => {
           </Menu.Item>
           <Menu.Item key="/clubs" onClick={() => history.push("/clubs")}>
             <Icon type="team" />
-            <span>Studen Clubs</span>
+            <span>Student Clubs</span>
           </Menu.Item>
 
           <Menu.Item key="/events" onClick={() => history.push("/events")}>
