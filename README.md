@@ -1,6 +1,4 @@
-ADMIN LOGIN:
-admin@admin.com
-qwerqwer
+<img width="1440" alt="image3" src="https://user-images.githubusercontent.com/25864398/74815398-360fb980-530a-11ea-814b-ed10a10cafb6.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
